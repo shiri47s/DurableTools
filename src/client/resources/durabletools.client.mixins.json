@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.shiri47s.mod.mixin.client",
+  "compatibilityLevel": "JAVA_17",
+  "client": [
+    "ClientMixin",
+    "ClientPlayNetworkHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "LivingEntityMixin"
+  ]
+}

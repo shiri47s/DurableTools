@@ -1,0 +1,41 @@
+{
+  "item.durabletools.durable_firework_rocket": "ロケット花火（耐）",
+  "item.durabletools.durable_firework_rocket.tooltip_0": "耐久値を持つロケット花火",
+  "item.durabletools.durable_firework_rocket.tooltip_1": "プレイズパウダーで修復可能",
+  "item.durabletools.durable_firework_rocket.tooltip_2": "自由に空を飛ぶことができます",
+
+  "item.durabletools.netherite_firework_rocket": "ネザライトロケット花火",
+  "item.durabletools.netherite_firework_rocket.tooltip_0": "耐久値を持つネザライトで強化されたロケット花火",
+  "item.durabletools.netherite_firework_rocket.tooltip_1": "ネザライトインゴットで修復可能",
+  "item.durabletools.netherite_firework_rocket.tooltip_2": "快適に空を飛ぶことができます",
+
+  "item.durabletools.firework_rocket.alert": "情報: ロケット花火の耐久値がなくなりそうです",
+
+  "item.durabletools.durable_totem": "不死のトーテム（耐）",
+  "item.durabletools.durable_totem.tooltip_0": "耐久値を持つ不死のトーテム",
+  "item.durabletools.durable_totem.tooltip_1": "不死のトーテムで修復可能",
+  "item.durabletools.durable_totem.tooltip_2": "ワールドで死ににくくなります",
+
+  "item.durabletools.netherite_totem": "不死のネザライトーテム",
+  "item.durabletools.netherite_totem.tooltip_0": "耐久値を持つネザライトで強化された不死のトーテム",
+  "item.durabletools.netherite_totem.tooltip_1": "ネザライトインゴットで修復可能",
+  "item.durabletools.netherite_totem.tooltip_2": "ワールドで死ぬことは難しいでしょう",
+
+  "item.durabletools.durable_torch": "松明（耐）",
+  "item.durabletools.durable_torch.tooltip_0": "耐久値を持つ松明",
+  "item.durabletools.durable_torch.tooltip_1": "石炭などで修復可能",
+  "item.durabletools.durable_torch.tooltip_2": "暗闇を照らしましょう",
+
+  "item.durabletools.netherite_torch": "ネザライト松明",
+  "item.durabletools.netherite_torch.tooltip_0": "耐久値を持つネザライトで強化された松明",
+  "item.durabletools.netherite_torch.tooltip_1": "ネザライトインゴットで修復可能",
+  "item.durabletools.netherite_torch.tooltip_2": "暗闇を恐れる必要はなくなりました",
+
+  "item.durabletools.durable_torch.alert": "情報: 松明の耐久値がなくなりそうです",
+
+  "block.durabletools.durable_torch_block": "松明",
+  "block.durabletools.unobtainable_torch_block": "松明",
+  "block.durabletools.unobtainable_wall_torch_block": "松明",
+
+  "trinkets.slot.charm.charm": "チャーム"
+}

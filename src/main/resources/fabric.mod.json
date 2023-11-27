@@ -1,39 +1,40 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "durabletools",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "DurableTools",
+	"description": "We hope that life in the World will be enriched by giving any tool an endurance value.",
 	"authors": [
-		"Me!"
+		"shiri47s"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
-	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"license": "MIT",
+	"icon": "assets/durabletools/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"com.shiri47s.mod.ServiceInitializer"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"com.shiri47s.mod.ClientInitializer"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+      "durabletools.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "durabletools.client.mixins.json",
 			"environment": "client"
 		}
 	],
 	"depends": {
 		"fabricloader": ">=0.14.22",
-		"minecraft": "~1.20.2",
+		"minecraft": "~1.20.1",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric-api": "*",
+		"trinkets": "*"
 	},
 	"suggests": {
 		"another-mod": "*"
