@@ -4,7 +4,7 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;
 
-public class NetheriteFireworkRocketMaterial  implements ToolMaterial {
+public class NetheriteFireworkRocketMaterial implements ToolMaterial {
 
     public static final NetheriteFireworkRocketMaterial INSTANCE = new NetheriteFireworkRocketMaterial();
 

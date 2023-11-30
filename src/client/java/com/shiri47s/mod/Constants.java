@@ -12,4 +12,7 @@ public class Constants {
     public static final String UNOBTAINABLE_WALL_TORCH_BLOCK_ID = "unobtainable_wall_torch_block";
     public static final String DURABLE_TORCH_ID = "durable_torch";
     public static final String NETHERITE_TORCH_ID = "netherite_torch";
+
+    public static final String FIREWORK_ROCKET_SPEED_ATTRIBUTE_ID = "generic.firework_rocket_speed";
+    public static final String NETHERITE_ELYTRA_ID = "netherite_elytra";
 }

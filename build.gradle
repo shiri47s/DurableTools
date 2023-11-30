@@ -22,6 +22,7 @@ repositories {
 		name = "Ladysnake Libs"
 		url = 'https://maven.ladysnake.org/releases'
 	}
+	maven { url = "https://jitpack.io" }
 }
 
 loom {
@@ -54,6 +55,7 @@ dependencies {
 
 	modImplementation "dev.emi:trinkets:${trinkets_version}"
 	include "dev.emi:trinkets:${project.trinkets_version}"
+	include(implementation(annotationProcessor("com.github.llamalad7.mixinextras:mixinextras-fabric:${project.mixinextras_version}")))
 }
 
 processResources {

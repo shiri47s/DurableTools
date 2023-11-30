@@ -10,7 +10,7 @@ public class NetheriteTorchMaterial implements ToolMaterial {
 
     @Override
     public int getDurability() {
-        return 256;
+        return 512;
     }
 
     @Override

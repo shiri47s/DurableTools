@@ -1,5 +1,6 @@
 package com.shiri47s.mod;
 
+import com.shiri47s.mod.Equip.NetheriteElytraItem;
 import com.shiri47s.mod.blocks.UnobtainableTorchBlock;
 import com.shiri47s.mod.blocks.UnobtainableWallTorchBlock;
 import com.shiri47s.mod.tools.*;
@@ -12,15 +13,17 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.entity.attribute.ClampedEntityAttribute;
+import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.Items;
 import net.minecraft.item.VerticallyAttachableBlockItem;
-import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.math.Direction;
 
 public class DurableTools {
@@ -50,10 +53,15 @@ public class DurableTools {
 
     public static final Item UNOBTAINABLE_TORCH_BLOCK_ITEM = new VerticallyAttachableBlockItem(UNOBTAINABLE_TORCH_BLOCK, UNOBTAINABLE_WALL_TORCH_BLOCK, new Item.Settings(), Direction.DOWN);
 
+    public static final NetheriteElytraItem NETHERITE_ELYTRA_ITEM = new NetheriteElytraItem(new FabricItemSettings().rarity(Rarity.EPIC).maxDamage(999));
+    public static final EntityAttribute GENERIC_FIREWORK_ROCKET_SPEED = new ClampedEntityAttribute(Constants.FIREWORK_ROCKET_SPEED_ATTRIBUTE_ID, 1.0f, 0.0, 1024.0f).setTracked(true);
+
     public void initialize() {
         Registry.register(Registries.BLOCK, new Identifier(Constants.NAMESPACE, Constants.UNOBTAINABLE_TORCH_BLOCK_ID), UNOBTAINABLE_TORCH_BLOCK);
         Registry.register(Registries.BLOCK, new Identifier(Constants.NAMESPACE, Constants.UNOBTAINABLE_WALL_TORCH_BLOCK_ID), UNOBTAINABLE_WALL_TORCH_BLOCK);
         Registry.register(Registries.ITEM, new Identifier(Constants.NAMESPACE, Constants.UNOBTAINABLE_TORCH_BLOCK_ID), UNOBTAINABLE_TORCH_BLOCK_ITEM);
+        Registry.register(Registries.ATTRIBUTE, new Identifier(Constants.NAMESPACE, Constants.FIREWORK_ROCKET_SPEED_ATTRIBUTE_ID), GENERIC_FIREWORK_ROCKET_SPEED);
+        Registry.register(Registries.ITEM, new Identifier(Constants.NAMESPACE, Constants.NETHERITE_ELYTRA_ID), NETHERITE_ELYTRA_ITEM);
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(Items.FIREWORK_ROCKET, DURABLE_FIREWORK_ROCKET));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(DURABLE_FIREWORK_ROCKET, NETHERITE_FIREWORK_ROCKET));
@@ -64,6 +72,8 @@ public class DurableTools {
 
         setRenderType(UNOBTAINABLE_TORCH_BLOCK);
         setRenderType(UNOBTAINABLE_WALL_TORCH_BLOCK);
+
+        NETHERITE_ELYTRA_ITEM.initialize();
     }
 
     @Environment(EnvType.CLIENT)

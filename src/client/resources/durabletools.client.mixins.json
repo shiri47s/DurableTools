@@ -4,12 +4,12 @@
   "compatibilityLevel": "JAVA_17",
   "client": [
     "ClientMixin",
-    "ClientPlayNetworkHandlerMixin"
+    "ClientPlayNetworkHandlerMixin",
+    "ElytraFeatureRendererMixin",
+    "FireworkRocketEntityMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  },
-  "mixins": [
-    "LivingEntityMixin"
-  ]
+  }
 }

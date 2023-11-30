@@ -35,6 +35,6 @@ public class DurableTorchMaterial implements ToolMaterial {
 
     @Override
     public Ingredient getRepairIngredient() {
-        return Ingredient.ofItems(Items.RED_CANDLE);
+        return Ingredient.ofItems(Items.BLAZE_ROD);
     }
 }

@@ -5,9 +5,11 @@ import com.shiri47s.mod.services.DurableToolFinder;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -24,11 +26,14 @@ public class DurableTorchItem extends PickaxeItem {
     private static final int ATTACK_DAMAGE = 2;
     private static final float ATTACK_SPEED = -2.8F;
 
-    private static final int DAMAGE_ALERT_VALUE = 5;
+    private static final int DAMAGE_ALERT_VALUE = 10;
+
+    private static final int USE_COST = 2;
 
     public DurableTorchItem(Settings settings) {
-        this(DurableTotemMaterial.INSTANCE, ATTACK_DAMAGE, ATTACK_SPEED, settings);
+        this(DurableTorchMaterial.INSTANCE, ATTACK_DAMAGE, ATTACK_SPEED, settings);
     }
+
     public DurableTorchItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, attackDamage, attackSpeed, settings);
     }
@@ -62,7 +67,7 @@ public class DurableTorchItem extends PickaxeItem {
                 PlayerEntity user = context.getPlayer();
                 if (user != null) {
                     ItemStack itemStack = context.getStack();
-                    itemStack.damage(2, user, e ->
+                    itemStack.damage(USE_COST, user, e ->
                     {
                         EquipmentSlot slot = DurableToolFinder.getFireworkRocketEquipmentSlot(e, itemStack);
                         if (slot != null) {

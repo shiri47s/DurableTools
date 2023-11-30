@@ -5,7 +5,10 @@ import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireworkRocketEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.ItemUsageContext;
+import net.minecraft.item.PickaxeItem;
+import net.minecraft.item.ToolMaterial;
 import net.minecraft.stat.Stats;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
@@ -22,6 +25,7 @@ public class DurableFireworkRocketItem extends PickaxeItem {
     private static final float ATTACK_SPEED = -2.8F;
 
     private static final int DAMAGE_ALERT_VALUE = 10;
+    private static final int USE_COST = 2;
 
     public DurableFireworkRocketItem(Settings settings) {
         this(DurableFireworkRocketMaterial.INSTANCE, ATTACK_DAMAGE, ATTACK_SPEED, settings);
@@ -37,12 +41,12 @@ public class DurableFireworkRocketItem extends PickaxeItem {
             ItemStack itemStack = context.getStack();
             Vec3d vec3d = context.getHitPos();
             Direction direction = context.getSide();
-            FireworkRocketEntity fireworkRocketEntity = new FireworkRocketEntity(world, context.getPlayer(), vec3d.x + (double)direction.getOffsetX() * 0.15, vec3d.y + (double)direction.getOffsetY() * 0.15, vec3d.z + (double)direction.getOffsetZ() * 0.15, itemStack);
+            FireworkRocketEntity fireworkRocketEntity = new FireworkRocketEntity(world, context.getPlayer(), vec3d.x + (double) direction.getOffsetX() * 0.15, vec3d.y + (double) direction.getOffsetY() * 0.15, vec3d.z + (double) direction.getOffsetZ() * 0.15, itemStack);
             world.spawnEntity(fireworkRocketEntity);
 
             PlayerEntity user = context.getPlayer();
             if (user != null) {
-                itemStack.damage(2, user, e ->
+                itemStack.damage(USE_COST, user, e ->
                 {
                     EquipmentSlot slot = DurableToolFinder.getFireworkRocketEquipmentSlot(e, itemStack);
                     if (slot != null) {
@@ -70,12 +74,12 @@ public class DurableFireworkRocketItem extends PickaxeItem {
                 ItemStack stackInHand = user.getStackInHand(hand);
                 if (!user.getAbilities().creativeMode) {
                     stackInHand.damage(2, user, e ->
-                            {
-                                EquipmentSlot slot = DurableToolFinder.getFireworkRocketEquipmentSlot(e, stackInHand);
-                                if (slot != null) {
-                                    e.sendEquipmentBreakStatus(slot);
-                                }
-                            });
+                    {
+                        EquipmentSlot slot = DurableToolFinder.getFireworkRocketEquipmentSlot(e, stackInHand);
+                        if (slot != null) {
+                            e.sendEquipmentBreakStatus(slot);
+                        }
+                    });
                     alertAboutBreak(user, stackInHand);
                 }
 

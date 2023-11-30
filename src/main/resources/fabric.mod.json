@@ -1,42 +1,42 @@
 {
-	"schemaVersion": 1,
-	"id": "durabletools",
-	"version": "${version}",
-	"name": "DurableTools",
-	"description": "We hope that life in the World will be enriched by giving any tool an endurance value.",
-	"authors": [
-		"shiri47s"
-	],
-	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
-	},
-	"license": "MIT",
-	"icon": "assets/durabletools/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.shiri47s.mod.ServiceInitializer"
-		],
-		"client": [
-			"com.shiri47s.mod.ClientInitializer"
-		]
-	},
-	"mixins": [
-      "durabletools.mixins.json",
-		{
-			"config": "durabletools.client.mixins.json",
-			"environment": "client"
-		}
-	],
-	"depends": {
-		"fabricloader": ">=0.14.22",
-		"minecraft": "~1.20.1",
-		"java": ">=17",
-		"fabric-api": "*",
-		"trinkets": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "durabletools",
+  "version": "${version}",
+  "name": "DurableTools",
+  "description": "We hope that life in the World will be enriched by giving any tool an endurance value.",
+  "authors": [
+    "shiri47s"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "MIT",
+  "icon": "assets/durabletools/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.shiri47s.mod.ServiceInitializer"
+    ],
+    "client": [
+      "com.shiri47s.mod.ClientInitializer"
+    ]
+  },
+  "mixins": [
+    "durabletools.mixins.json",
+    {
+      "config": "durabletools.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.22",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "fabric-api": "*",
+    "trinkets": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }
