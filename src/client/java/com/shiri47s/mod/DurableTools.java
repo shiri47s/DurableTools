@@ -1,8 +1,6 @@
 package com.shiri47s.mod;
 
 import com.shiri47s.mod.Equip.NetheriteElytraItem;
-import com.shiri47s.mod.blocks.UnobtainableTorchBlock;
-import com.shiri47s.mod.blocks.UnobtainableWallTorchBlock;
 import com.shiri47s.mod.tools.*;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -41,25 +39,10 @@ public class DurableTools {
     public static final Item NETHERITE_TOTEM =
             Registry.register(Registries.ITEM, new Identifier(Constants.NAMESPACE, Constants.NETHERITE_TOTEM_ID), new NetheriteTotemItem(new FabricItemSettings()));
 
-    public static final Item DURABLE_TORCH =
-            Registry.register(Registries.ITEM, new Identifier(Constants.NAMESPACE, Constants.DURABLE_TORCH_ID), new DurableTorchItem(new FabricItemSettings()));
-
-    public static final Item NETHERITE_TORCH =
-            Registry.register(Registries.ITEM, new Identifier(Constants.NAMESPACE, Constants.NETHERITE_TORCH_ID), new NetheriteTorchItem(new FabricItemSettings()));
-
-    public static final Block UNOBTAINABLE_TORCH_BLOCK = new UnobtainableTorchBlock(AbstractBlock.Settings.create().noCollision().breakInstantly().luminance((state) -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY));
-
-    public static final Block UNOBTAINABLE_WALL_TORCH_BLOCK = new UnobtainableWallTorchBlock(AbstractBlock.Settings.create().noCollision().breakInstantly().luminance(state -> 14).sounds(BlockSoundGroup.WOOD).pistonBehavior(PistonBehavior.DESTROY));
-
-    public static final Item UNOBTAINABLE_TORCH_BLOCK_ITEM = new VerticallyAttachableBlockItem(UNOBTAINABLE_TORCH_BLOCK, UNOBTAINABLE_WALL_TORCH_BLOCK, new Item.Settings(), Direction.DOWN);
-
     public static final NetheriteElytraItem NETHERITE_ELYTRA_ITEM = new NetheriteElytraItem(new FabricItemSettings().rarity(Rarity.EPIC).maxDamage(999));
     public static final EntityAttribute GENERIC_FIREWORK_ROCKET_SPEED = new ClampedEntityAttribute(Constants.FIREWORK_ROCKET_SPEED_ATTRIBUTE_ID, 1.0f, 0.0, 1024.0f).setTracked(true);
 
     public void initialize() {
-        Registry.register(Registries.BLOCK, new Identifier(Constants.NAMESPACE, Constants.UNOBTAINABLE_TORCH_BLOCK_ID), UNOBTAINABLE_TORCH_BLOCK);
-        Registry.register(Registries.BLOCK, new Identifier(Constants.NAMESPACE, Constants.UNOBTAINABLE_WALL_TORCH_BLOCK_ID), UNOBTAINABLE_WALL_TORCH_BLOCK);
-        Registry.register(Registries.ITEM, new Identifier(Constants.NAMESPACE, Constants.UNOBTAINABLE_TORCH_BLOCK_ID), UNOBTAINABLE_TORCH_BLOCK_ITEM);
         Registry.register(Registries.ATTRIBUTE, new Identifier(Constants.NAMESPACE, Constants.FIREWORK_ROCKET_SPEED_ATTRIBUTE_ID), GENERIC_FIREWORK_ROCKET_SPEED);
         Registry.register(Registries.ITEM, new Identifier(Constants.NAMESPACE, Constants.NETHERITE_ELYTRA_ID), NETHERITE_ELYTRA_ITEM);
 
@@ -67,17 +50,8 @@ public class DurableTools {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(content -> content.addAfter(DURABLE_FIREWORK_ROCKET, NETHERITE_FIREWORK_ROCKET));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> content.addAfter(Items.TOTEM_OF_UNDYING, DURABLE_TOTEM));
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> content.addAfter(DURABLE_TOTEM, NETHERITE_TOTEM));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> content.addAfter(Items.TORCH, DURABLE_TORCH));
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.FUNCTIONAL).register(content -> content.addAfter(DURABLE_TORCH, NETHERITE_TORCH));
-
-        setRenderType(UNOBTAINABLE_TORCH_BLOCK);
-        setRenderType(UNOBTAINABLE_WALL_TORCH_BLOCK);
+        ItemGroupEvents.modifyEntriesEvent(ItemGroups.COMBAT).register(content -> content.addAfter(Items.ELYTRA, NETHERITE_ELYTRA_ITEM));
 
         NETHERITE_ELYTRA_ITEM.initialize();
-    }
-
-    @Environment(EnvType.CLIENT)
-    private void setRenderType(Block block) {
-        BlockRenderLayerMap.INSTANCE.putBlock(block, RenderLayer.getCutoutMipped());
     }
 }

@@ -1,6 +1,7 @@
 package com.shiri47s.mod.mixin.client;
 
 import com.shiri47s.mod.DurableTools;
+import com.shiri47s.mod.RenderingContext;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.EntityType;
@@ -13,8 +14,10 @@ import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.Redirect;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Environment(EnvType.CLIENT)
 @Mixin(FireworkRocketEntity.class)
@@ -41,5 +44,15 @@ public abstract class FireworkRocketEntityMixin extends ProjectileEntity {
         var speedModifier = this.shooter.getAttributeValue(DurableTools.GENERIC_FIREWORK_ROCKET_SPEED);
 
         return velocity.multiply(speedModifier).add(x, y, z);
+    }
+
+    @Inject( method = "tick", at = @At(value = "HEAD"))
+    public void durabletools$tickHEAD(CallbackInfo ci) {
+        RenderingContext.fireworkRocketShooter = this.shooter;
+    }
+
+    @Inject( method = "tick", at = @At(value = "RETURN"))
+    public void durabletools$tickRETURN(CallbackInfo ci) {
+        RenderingContext.fireworkRocketShooter = null;
     }
 }
