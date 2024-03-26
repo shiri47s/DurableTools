@@ -1,9 +1,16 @@
 # Durable Tools
 
-## Setup
+## About
 
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
+Durable Tools was created with the idea of making any item last. This item is under development and will be expanded in the future. We hope you will enjoy living Minecraft with the added item of durability.
 
-## License
+## Features
 
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+- Fireworks Rocket
+  
+There is no need to fly through the sky with lots of rocket fireworks. You can fly freely with just this item. There are also one that have high-grade.
+
+- Totem of undying
+  
+The totem having may be able to save you from the plight of death. There are also one that have high-grade.
+and a modest add-on to equip
