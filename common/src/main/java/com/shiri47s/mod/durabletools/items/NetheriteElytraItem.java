@@ -56,7 +56,7 @@ public class NetheriteElytraItem extends ElytraItem {
             builder.put(EntityAttributes.GENERIC_ARMOR, armor);
             builder.put(EntityAttributes.GENERIC_ARMOR_TOUGHNESS, toughness);
             builder.put(EntityAttributes.GENERIC_MOVEMENT_SPEED, speed);
-            //builder.put(GENERIC_FIREWORK_ROCKET_SPEED, rocketSpeedBonus);
+            builder.put(GENERIC_FIREWORK_ROCKET_SPEED, rocketSpeedBonus);
             return builder.build();
         }
 
