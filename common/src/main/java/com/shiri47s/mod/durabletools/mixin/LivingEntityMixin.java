@@ -1,11 +1,9 @@
 package com.shiri47s.mod.durabletools.mixin;
 
-import com.shiri47s.mod.durabletools.Constants;
 import com.shiri47s.mod.durabletools.DurableTools;
 import com.shiri47s.mod.durabletools.Enums;
 import com.shiri47s.mod.durabletools.items.DurableTotemItem;
 import com.shiri47s.mod.durabletools.items.NetheriteElytraItem;
-import com.shiri47s.mod.durabletools.items.NetheriteFireworkRocketItem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.entity.LivingEntity;

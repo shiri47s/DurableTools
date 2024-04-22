@@ -8,10 +8,8 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Pair;
 
 import java.util.ArrayList;
-import java.util.Optional;
 
 public abstract class AbstractModPlatform implements IModPlatform {
 

@@ -6,7 +6,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 
-
 public class ItemUtility {
 
     public static boolean isOf(ItemStack itemStack, Enums.ItemType type) {

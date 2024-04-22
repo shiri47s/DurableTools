@@ -1,8 +1,5 @@
 package com.shiri47s.mod.durabletools;
 
-import net.minecraft.entity.attribute.ClampedEntityAttribute;
-import net.minecraft.entity.attribute.EntityAttribute;
-
 public class Constants {
     public static final String MOD_ID = "durabletools";
     public static final String GROUP_ID = "durable_group";

@@ -2,7 +2,6 @@ package com.shiri47s.mod.durabletools.items;
 
 import com.google.common.collect.ImmutableMultimap;
 import com.google.common.collect.Multimap;
-import com.shiri47s.mod.durabletools.Constants;
 import com.shiri47s.mod.durabletools.DurableTools;
 import com.shiri47s.mod.durabletools.IModPlatform;
 import net.minecraft.client.item.TooltipContext;
