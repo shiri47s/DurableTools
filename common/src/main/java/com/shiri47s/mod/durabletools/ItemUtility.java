@@ -1,18 +1,13 @@
 package com.shiri47s.mod.durabletools;
 
 import com.shiri47s.mod.durabletools.items.*;
-import net.minecraft.item.ElytraItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
 
 
 public class ItemUtility {
-    public static ItemGroup ITEM_GROUP = Registries.ITEM_GROUP.get(new Identifier(Constants.MOD_ID, Constants.GROUP_ID));
-
 
     public static boolean isOf(ItemStack itemStack, Enums.ItemType type) {
         if (itemStack == null || itemStack.isEmpty()) {
