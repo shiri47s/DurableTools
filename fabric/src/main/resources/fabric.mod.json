@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "durabletools",
+  "version": "${version}",
+
+  "name": "DurableTools",
+  "description": "Enrich survival by adding durability value to items tools that do not have durability value.",
+  "authors": [],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.shiri47s.mod.durabletools.fabric.DurableToolsFabric"
+    ]
+  },
+  "mixins": [
+    "durabletools.mixins.json",
+    "durabletools-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.15.10",
+    "minecraft": ">=1.20"
+  }
+}
