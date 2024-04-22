@@ -1,16 +1,12 @@
 package com.shiri47s.mod.durabletools.mixin;
 
-import com.shiri47s.mod.durabletools.Constants;
 import com.shiri47s.mod.durabletools.RenderingContext;
 import com.shiri47s.mod.durabletools.items.NetheriteElytraItem;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.FireworkRocketEntity;
-import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
