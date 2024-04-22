@@ -20,6 +20,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Environment(EnvType.CLIENT)
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
+    @SuppressWarnings("UnreachableCode")
     @Inject(method = "tryUseTotem", at = @At(value = "HEAD"), cancellable = true)
     private void durabletools$tryUseTotem(DamageSource src, CallbackInfoReturnable<Boolean> cir) {
         if (!((LivingEntity)(Object)this instanceof PlayerEntity))
