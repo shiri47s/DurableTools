@@ -16,7 +16,7 @@ public class NetheriteTorchItem extends DurableTorchItem {
     private static final float ATTACK_SPEED = -2.6F;
 
     public NetheriteTorchItem(Settings settings) {
-        super(NetheriteTorchMaterial.INSTANCE, ATTACK_DAMAGE, ATTACK_SPEED, settings);
+        super(NetheriteTorchMaterial.INSTANCE, settings);
     }
 
     @Override
