@@ -32,11 +32,11 @@ public class ItemUtility {
 
     public static Item get(Enums.ItemType type) {
         return switch (type) {
-            case DurableFireworkRocket -> Registries.ITEM.get(new Identifier(Constants.FireworkRocket.ITEM_ID));
-            case NetheriteFireworkRocket -> Registries.ITEM.get(new Identifier(Constants.FireworkRocket.UPGRADED_ID));
-            case DurableTotem -> Registries.ITEM.get(new Identifier(Constants.Totem.ITEM_ID));
-            case NetheriteTotem -> Registries.ITEM.get(new Identifier(Constants.Totem.UPGRADED_ID));
-            case NetheriteElytra -> Registries.ITEM.get(new Identifier(Constants.Elytra.ITEM_ID));
+            case DurableFireworkRocket -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.FireworkRocket.ITEM_ID));
+            case NetheriteFireworkRocket -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.FireworkRocket.UPGRADED_ID));
+            case DurableTotem -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.Totem.ITEM_ID));
+            case NetheriteTotem -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.Totem.UPGRADED_ID));
+            case NetheriteElytra -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.Elytra.ITEM_ID));
             default -> throw new IllegalStateException("Unexpected value: " + type);
         };
     }
