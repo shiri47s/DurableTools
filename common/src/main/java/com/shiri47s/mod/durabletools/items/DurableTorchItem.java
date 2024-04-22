@@ -29,10 +29,10 @@ public class DurableTorchItem extends DurableToolsItem {
     private static final int USE_COST = 2;
 
     public DurableTorchItem(Settings settings) {
-        this(DurableTorchMaterial.INSTANCE, settings);
+        this(DurableTorchMaterial.INSTANCE, ATTACK_DAMAGE, ATTACK_SPEED, settings);
     }
 
-    public DurableTorchItem(ToolMaterial material, Settings settings) {
+    public DurableTorchItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
         super(material, ATTACK_DAMAGE, ATTACK_SPEED, settings);
     }
 
