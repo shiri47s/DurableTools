@@ -1,4 +1,4 @@
-package com.shiri47s.mod.durabletools.mixin;
+package com.shiri47s.mod.durabletools.fabric.mixin;
 
 import com.shiri47s.mod.durabletools.items.NetheriteElytraItem;
 import net.fabricmc.api.EnvType;
