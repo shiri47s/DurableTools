@@ -6,8 +6,10 @@
   "mixins": [
   ],
   "client": [
+    "FireworkRocketEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-  }
+  },
+  "plugin": "com.shiri47s.mod.durabletools.fabric.mixin.DurableToolsMixinPlugin"
 }

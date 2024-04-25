@@ -7,6 +7,7 @@ import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketComponent;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.loader.impl.FabricLoaderImpl;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
@@ -64,6 +65,10 @@ public class FabricPlatform extends AbstractModPlatform {
         return new FabricNetheriteElytra();
     }
 
+    @Override
+    public boolean isLoadedMod(String modName) {
+        return FabricLoaderImpl.INSTANCE.isModLoaded(modName);
+    }
 
     @Override
     protected ItemStack findElytra(PlayerEntity playerEntity) {
