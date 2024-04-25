@@ -28,4 +28,9 @@ public class ForgePlatform extends AbstractModPlatform {
     public Item getCustomElytraItem() {
         return new ForgeNetheriteElytraItem();
     }
+
+    @Override
+    public boolean isLoadedMod(String modName) {
+        return false;
+    }
 }

@@ -19,5 +19,15 @@
   "trinkets.slot.charm.charm": "チャーム",
   "item.durabletools.netherite_elytra": "ネザーライトエリトラ",
   "item.durabletools.netherite_elytra.tooltip_0": "高速飛行をお楽しみください",
-  "generic.firework_rocket_speed": "ロケット加速"
+  "generic.firework_rocket_speed": "ロケット加速",
+  "item.durabletools.durable_torch": "トーチ（耐）",
+  "block.durabletools.durable_torch" : "トーチ",
+  "block.durabletools.durable_wall_torch" : "トーチ",
+  "item.durabletools.durable_torch.tooltip_0": "耐久値を持つトーチ",
+  "item.durabletools.durable_torch.tooltip_1": "トーチで修復可能",
+  "item.durabletools.durable_torch.tooltip_2": "暗闇から解放されます",
+  "item.durabletools.netherite_torch": "ネザライトーテム",
+  "item.durabletools.netherite_torch.tooltip_0": "耐久値を持つネザライトで強化されたトーテム",
+  "item.durabletools.netherite_torch.tooltip_1": "ネザライトインゴットで修復可能",
+  "item.durabletools.netherite_torch.tooltip_2": "暗闇から解放されます"
 }
