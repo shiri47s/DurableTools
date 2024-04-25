@@ -30,6 +30,5 @@
   "item.durabletools.netherite_torch": "Netherite Torch",
   "item.durabletools.netherite_torch.tooltip_0": "This torch is durable",
   "item.durabletools.netherite_torch.tooltip_1": "It can be repaired by the netherite ingot",
-  "item.durabletools.netherite_torch.tooltip_2": "Enjoy a world free from the darkness",
-  "item.durabletools.durable_torch.alert": "NOTICE: The durable torch will be almost out of durability value!"
+  "item.durabletools.netherite_torch.tooltip_2": "Enjoy a world free from the darkness"
 }

@@ -16,4 +16,6 @@ public interface IModPlatform {
     EquipmentSlot getEquipmentSlot(LivingEntity livingEntity, ItemStack itemStack);
 
     Item getCustomElytraItem();
+
+    boolean isLoadedMod(String modName);
 }
