@@ -11,7 +11,6 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
@@ -29,10 +28,10 @@ public class DurableTorchItem extends DurableToolsItem {
     private static final int USE_COST = 2;
 
     public DurableTorchItem(Settings settings) {
-        this(DurableTorchMaterial.INSTANCE, ATTACK_DAMAGE, ATTACK_SPEED, settings);
+        this(DurableTorchMaterial.INSTANCE, settings);
     }
 
-    public DurableTorchItem(ToolMaterial material, int attackDamage, float attackSpeed, Settings settings) {
+    public DurableTorchItem(ToolMaterial material, Settings settings) {
         super(material, ATTACK_DAMAGE, ATTACK_SPEED, settings);
     }
 
