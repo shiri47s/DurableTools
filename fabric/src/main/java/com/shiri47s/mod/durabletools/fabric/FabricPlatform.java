@@ -8,7 +8,6 @@ import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketComponent;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.loader.impl.FabricLoaderImpl;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.EquipmentSlot;
@@ -44,7 +43,7 @@ public class FabricPlatform extends AbstractModPlatform {
 
     @Override
     protected ItemStack findTotem(PlayerEntity playerEntity) {
-        ArrayList<ItemStack> itemStackList = new ArrayList<ItemStack>();
+        ArrayList<ItemStack> itemStackList = new ArrayList<>();
         Hand[] hands = Hand.values();
         TrinketsApi.getTrinketComponent(playerEntity).ifPresent(component -> component.forEach((slotReference, itemStack) -> itemStackList.add(itemStack)));
         for (Hand hand : hands) {

@@ -17,7 +17,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.RotationAxis;
 
 public class DurableLanternItem extends com.shiri47s.mod.durabletools.items.DurableLanternItem implements TrinketRenderer {
-    private BipedEntityModel<LivingEntity> model;
+
     public DurableLanternItem(Item.Settings settings) {
         super(settings);
     }

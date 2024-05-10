@@ -3,7 +3,6 @@ package com.shiri47s.mod.durabletools.mixin;
 import com.shiri47s.mod.durabletools.*;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;

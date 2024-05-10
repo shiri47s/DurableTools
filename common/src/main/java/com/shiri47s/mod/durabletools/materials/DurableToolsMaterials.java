@@ -6,12 +6,8 @@ import net.minecraft.recipe.Ingredient;
 import java.util.function.Supplier;
 
 public enum DurableToolsMaterials implements ToolMaterial {
-    LANTERN_DEFAULT (2, 999, 4.5F, 1.5F, 7, () -> {
-        return Ingredient.ofItems(new ItemConvertible[]{Items.LANTERN});
-    }),
-    LANTERN_UPGRADED (3, 1999, 5.5F, 2.0F, 11, () -> {
-        return Ingredient.ofItems(new ItemConvertible[]{Items.NETHERITE_INGOT});
-    });
+    LANTERN_DEFAULT (2, 999, 4.5F, 1.5F, 7, () -> Ingredient.ofItems(Items.LANTERN)),
+    LANTERN_UPGRADED (3, 1999, 5.5F, 2.0F, 11, () -> Ingredient.ofItems(Items.NETHERITE_INGOT));
 
     private final int miningLevel;
     private final int itemDurability;
@@ -20,7 +16,7 @@ public enum DurableToolsMaterials implements ToolMaterial {
     private final int enchantability;
     private final Supplier<Ingredient> repairIngredient;
 
-    private DurableToolsMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
+    DurableToolsMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier<Ingredient> repairIngredient) {
         this.miningLevel = miningLevel;
         this.itemDurability = itemDurability;
         this.miningSpeed = miningSpeed;
@@ -45,6 +41,6 @@ public enum DurableToolsMaterials implements ToolMaterial {
         return this.enchantability;
     }
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient.get();
+        return this.repairIngredient.get();
     }
 }
