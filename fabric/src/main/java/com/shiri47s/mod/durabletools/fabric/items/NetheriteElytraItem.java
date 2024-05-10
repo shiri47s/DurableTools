@@ -1,7 +1,6 @@
 package com.shiri47s.mod.durabletools.fabric.items;
 
 import com.shiri47s.mod.durabletools.Enums;
-import com.shiri47s.mod.durabletools.items.NetheriteElytraItem;
 import dev.emi.trinkets.api.TrinketComponent;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.fabricmc.fabric.api.client.rendering.v1.LivingEntityFeatureRenderEvents;
@@ -15,7 +14,7 @@ import net.minecraft.world.event.GameEvent;
 
 import java.util.Optional;
 
-public class FabricNetheriteElytra extends NetheriteElytraItem implements FabricElytraItem {
+public class NetheriteElytraItem extends com.shiri47s.mod.durabletools.items.NetheriteElytraItem implements FabricElytraItem {
 
     @Override
     public void init() {
@@ -26,7 +25,7 @@ public class FabricNetheriteElytra extends NetheriteElytraItem implements Fabric
             }
 
             ItemStack itemStack = platform.findItem(player, Enums.ItemType.NetheriteElytra);
-            if (itemStack.getItem() instanceof FabricNetheriteElytra elytra) {
+            if (itemStack.getItem() instanceof NetheriteElytraItem elytra) {
                 return elytra.useElytra(entity, itemStack, tickElytra);
             }
 

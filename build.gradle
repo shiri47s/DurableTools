@@ -1,6 +1,9 @@
 plugins {
     id "architectury-plugin" version "3.4-SNAPSHOT"
     id "dev.architectury.loom" version "1.6-SNAPSHOT" apply false
+    //noinspection SpellCheckingInspection
+    id "com.matthewprenger.cursegradle" version "1.4.0" apply false
+    id "com.modrinth.minotaur" version "2.+" apply false
 }
 
 architectury {
@@ -59,5 +62,63 @@ allprojects {
 
     java {
         withSourcesJar()
+    }
+}
+
+subprojects {
+    if (!enabled_platforms.split(',').contains(project.name))
+        return
+
+    def RELEASE = "beta"
+
+    def CHANGE_LOG = rootProject.file('changelog.md').getText("UTF-8")
+    def PUBLISH_NAME = "${project.archives_base_name}-v${project.mod_version}_${project.minecraft_version}-${project.name}"
+    def MOD_LOADER = project.name
+
+    apply plugin: "com.modrinth.minotaur"
+    modrinth {
+        def MODRINTH_TOKEN = System.getenv("MODRINTH_TOKEN")
+        if (MODRINTH_TOKEN != null) {
+            token = MODRINTH_TOKEN
+            projectId = project.modrinth_id
+            versionName = PUBLISH_NAME
+            versionNumber = project.mod_version
+            versionType = RELEASE
+            uploadFile = remapJar
+            changelog = CHANGE_LOG
+            gameVersions = ["${project.minecraft_version}"]
+            loaders = [MOD_LOADER]
+            dependencies {
+                required.project "fabric-api"
+                required.project "architectury-api"
+            }
+        }
+    }
+
+    apply plugin: "com.matthewprenger.cursegradle"
+    curseforge {
+        def CURSEFORGE_TOKEN = System.getenv("CURSEFORGE_TOKEN")
+        if (CURSEFORGE_TOKEN != null) {
+            apiKey = CURSEFORGE_TOKEN
+            //noinspection GroovyAssignabilityCheck
+            project {
+                id = project.curseforge_id
+                releaseType = RELEASE
+                changelogType = "markdown"
+                changelog = CHANGE_LOG
+                addGameVersion MOD_LOADER.capitalize()
+
+                mainArtifact(remapJar.archiveFile.get().asFile) {
+                    displayName = PUBLISH_NAME
+                }
+                afterEvaluate {
+                    uploadTask.dependsOn("build")
+                }
+            }
+            options {
+                forgeGradleIntegration = false
+                javaVersionAutoDetect = false
+            }
+        }
     }
 }

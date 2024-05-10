@@ -2,6 +2,8 @@
   "replace": false,
   "values": [
     "durabletools:durable_totem",
-    "durabletools:netherite_totem"
+    "durabletools:netherite_totem",
+    "durabletools:durable_lantern",
+    "durabletools:netherite_lantern"
   ]
 }

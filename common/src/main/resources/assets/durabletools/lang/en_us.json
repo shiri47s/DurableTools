@@ -30,5 +30,14 @@
   "item.durabletools.netherite_torch": "Netherite Torch",
   "item.durabletools.netherite_torch.tooltip_0": "This torch is durable",
   "item.durabletools.netherite_torch.tooltip_1": "It can be repaired by the netherite ingot",
-  "item.durabletools.netherite_torch.tooltip_2": "Enjoy a world free from the darkness"
+  "item.durabletools.netherite_torch.tooltip_2": "Enjoy a world free from the darkness",
+
+  "item.durabletools.durable_lantern": "Durable Lantern",
+  "item.durabletools.durable_lantern.tooltip_0": "It cannot be placed like a normal lantern, but it can be equipped as a charm.",
+  "item.durabletools.durable_lantern.tooltip_1": "While equipped as a charm, it can be used as a light to illuminate the surrounding area,",
+  "item.durabletools.durable_lantern.tooltip_2": "although its durability will continue to decrease.",
+  "item.durabletools.netherite_lantern": "Netherite Lantern",
+  "item.durabletools.netherite_lantern.tooltip_0": "It cannot be placed like a normal lantern, but it can be equipped as a charm.",
+  "item.durabletools.netherite_lantern.tooltip_1": "While equipped as a charm, it can be used as a light to illuminate the surrounding area,",
+  "item.durabletools.netherite_lantern.tooltip_2": "although its durability will continue to decrease."
 }

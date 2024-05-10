@@ -20,6 +20,7 @@ public abstract class AbstractModPlatform implements IModPlatform {
             case DurableTotem, NetheriteTotem -> findTotem(playerEntity);
             case DurableTorch, NetheriteTorch -> findTorch(playerEntity);
             case NetheriteElytra -> findElytra(playerEntity);
+            case DurableLantern, NetheriteLantern -> findLantern(playerEntity);
         };
     }
 
@@ -37,6 +38,10 @@ public abstract class AbstractModPlatform implements IModPlatform {
         }
 
         return null;
+    }
+
+    protected ItemStack findLantern(PlayerEntity playerEntity) {
+        return ItemStack.EMPTY;
     }
 
     protected ItemStack findFireworksRocket(PlayerEntity playerEntity) {

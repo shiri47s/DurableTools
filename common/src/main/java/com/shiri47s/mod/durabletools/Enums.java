@@ -8,7 +8,9 @@ public class Enums {
         NetheriteTotem,
         DurableTorch,
         NetheriteTorch,
-        NetheriteElytra
+        NetheriteElytra,
+        DurableLantern,
+        NetheriteLantern
     }
 
     public enum BlockType {

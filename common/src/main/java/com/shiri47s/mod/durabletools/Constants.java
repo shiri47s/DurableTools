@@ -21,6 +21,12 @@ public class Constants {
         public static final String WALL_BLOCK_ID = "durable_wall_torch";
     }
 
+    public static class Lantern {
+        public static final String ITEM_ID = "durable_lantern";
+        public static final String UPGRADED_ID = "netherite_lantern";
+        public static final int COST = 1;
+    }
+
     public static class Elytra {
         public static final String ITEM_ID = "netherite_elytra";
     }

@@ -1,6 +1,5 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
-    id "com.modrinth.minotaur" version "2.+"
 }
 
 architectury {
@@ -76,21 +75,5 @@ publishing {
     // See https://docs.gradle.org/current/userguide/publishing_maven.html for information on how to set up publishing.
     repositories {
         // Add repositories to publish to here.
-    }
-}
-
-modrinth {
-    token = System.getenv("MODRINTH_TOKEN")
-    projectId = "PS3AeUqo"
-
-    versionNumber = project.mod_version
-    versionType = "beta"
-    uploadFile = remapJar
-    gameVersions = ["${project.minecraft_version}"]
-    loaders = ["fabric"]
-    dependencies {
-        required.project "fabric-api"
-        required.project "architectury-api"
-        required.project "trinkets"
     }
 }

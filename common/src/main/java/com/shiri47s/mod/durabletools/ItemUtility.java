@@ -21,6 +21,7 @@ public class ItemUtility {
             case DurableTorch -> itemStack.getItem() instanceof DurableTorchItem;
             case NetheriteTorch -> itemStack.getItem() instanceof NetheriteTorchItem;
             case NetheriteElytra -> DurableTools.getPlatform().isOf(itemStack, Enums.ItemType.NetheriteElytra);
+            case DurableLantern, NetheriteLantern -> itemStack.getItem() instanceof DurableLanternItem;
         };
     }
 
@@ -31,6 +32,8 @@ public class ItemUtility {
             case DurableTotem -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.Totem.ITEM_ID));
             case NetheriteTotem -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.Totem.UPGRADED_ID));
             case NetheriteElytra -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.Elytra.ITEM_ID));
+            case DurableLantern -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.Lantern.ITEM_ID));
+            case NetheriteLantern -> Registries.ITEM.get(new Identifier(Constants.MOD_ID, Constants.Lantern.UPGRADED_ID));
             default -> throw new IllegalStateException("Unexpected value: " + type);
         };
     }

@@ -15,6 +15,9 @@
   "entrypoints": {
     "main": [
       "com.shiri47s.mod.durabletools.fabric.DurableToolsFabric"
+    ],
+    "client": [
+      "com.shiri47s.mod.durabletools.fabric.client.DurableToolsFabric"
     ]
   },
   "mixins": [

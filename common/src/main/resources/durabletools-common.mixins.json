@@ -4,6 +4,7 @@
   "package": "com.shiri47s.mod.durabletools.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "PlayerEntityMixin"
   ],
   "client": [
     "ClientPlayNetworkHandlerMixin",

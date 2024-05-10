@@ -29,6 +29,10 @@ public class DurableToolsMixinPlugin implements IMixinConfigPlugin {
             return !FabricLoaderImpl.INSTANCE.isModLoaded("mythicmetals");
         }
 
+        if (mixinClassName.equals("com.shiri47s.mod.durabletools.fabric.mixin.PlayerEntityMixin")) {
+            return FabricLoaderImpl.INSTANCE.isModLoaded("lambdynlights");
+        }
+
         return true;
     }
 

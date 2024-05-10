@@ -7,6 +7,9 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 public interface IModPlatform {
+    boolean isFabric();
+    boolean isForge();
+
     void initialize();
 
     boolean isOf(ItemStack stack, Enums.ItemType type);
@@ -16,6 +19,10 @@ public interface IModPlatform {
     EquipmentSlot getEquipmentSlot(LivingEntity livingEntity, ItemStack itemStack);
 
     Item getCustomElytraItem();
+
+    Item getDurableLanternItem(Item.Settings setting);
+
+    Item getUpgradedLanternItem(Item.Settings setting);
 
     boolean isLoadedMod(String modName);
 }

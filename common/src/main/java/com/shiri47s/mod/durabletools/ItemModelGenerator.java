@@ -38,19 +38,24 @@ public class ItemModelGenerator {
         ItemRegister.register(Constants.Torch.ITEM_ID, () -> new DurableTorchItem(new Item.Settings().arch$tab(itemGroup)));
         ItemRegister.register(Constants.Torch.UPGRADED_ID, () -> new NetheriteTorchItem(new Item.Settings().arch$tab(itemGroup)));
 
+        if (platform.isFabric() && platform.isLoadedMod("lambdynlights")) {
+            ItemRegister.register(Constants.Lantern.ITEM_ID, () -> platform.getDurableLanternItem(new Item.Settings().arch$tab(itemGroup)));
+            ItemRegister.register(Constants.Lantern.UPGRADED_ID, () -> platform.getUpgradedLanternItem(new Item.Settings().arch$tab(itemGroup)));
+        }
+
         ItemRegister.register(Constants.Elytra.ITEM_ID, platform::getCustomElytraItem);
 
         ItemRegister.register();
     }
 
-    private static void generateBlocks(IModPlatform platform, ItemGroup itemGroup) {
+    private static void generateBlocks(IModPlatform ignoredPlatform, ItemGroup ignoredItemGroup) {
         blockRegister.register(Constants.Torch.BLOCK_ID, DurableTorchBlock::new);
         blockRegister.register(Constants.Torch.WALL_BLOCK_ID, DurableWallTorchBlock::new);
 
         blockRegister.register();
     }
 
-    public static ItemGroup generateGroups(IModPlatform platform) {
+    public static ItemGroup generateGroups(IModPlatform ignoredPlatform) {
         groupRegister.register(Constants.GROUP_ID, () -> CreativeTabRegistry.create(
                 Text.translatable("item.durabletools.group"),
                 () -> new ItemStack(Items.TOTEM_OF_UNDYING)));

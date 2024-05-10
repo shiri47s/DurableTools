@@ -1,12 +1,14 @@
 package com.shiri47s.mod.durabletools.fabric;
 
 import com.shiri47s.mod.durabletools.*;
-import com.shiri47s.mod.durabletools.fabric.items.FabricNetheriteElytra;
-import com.shiri47s.mod.durabletools.items.NetheriteElytraItem;
+import com.shiri47s.mod.durabletools.fabric.items.DurableLanternItem;
+import com.shiri47s.mod.durabletools.fabric.items.NetheriteElytraItem;
+import com.shiri47s.mod.durabletools.fabric.items.NetheriteLanternItem;
 import dev.emi.trinkets.api.SlotReference;
 import dev.emi.trinkets.api.TrinketComponent;
 import dev.emi.trinkets.api.TrinketsApi;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.fabricmc.loader.impl.FabricLoaderImpl;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.entity.EquipmentSlot;
@@ -21,6 +23,19 @@ import java.util.Objects;
 import java.util.Optional;
 
 public class FabricPlatform extends AbstractModPlatform {
+    public static Item LANTERN_DEFAULT_ITEM;
+    public static Item LANTERN_UPGRADED_ITEM;
+
+    @Override
+    public boolean isFabric() {
+        return true;
+    }
+
+    @Override
+    public boolean isForge() {
+        return false;
+    }
+
     @Override
     public void initialize() {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockUtility.get(Enums.BlockType.TorchBlock), RenderLayer.getCutout());
@@ -55,14 +70,32 @@ public class FabricPlatform extends AbstractModPlatform {
     @Override
     public boolean isOf(ItemStack stack, Enums.ItemType type) {
         if (Objects.requireNonNull(type) == Enums.ItemType.NetheriteElytra) {
-            return stack.getItem() instanceof NetheriteElytraItem;
+            return stack.getItem() instanceof com.shiri47s.mod.durabletools.items.NetheriteElytraItem;
         }
         return false;
     }
 
     @Override
     public Item getCustomElytraItem() {
-        return new FabricNetheriteElytra();
+        return new NetheriteElytraItem();
+    }
+
+    @Override
+    public Item getDurableLanternItem(Item.Settings settings) {
+        if(LANTERN_DEFAULT_ITEM == null) {
+            LANTERN_DEFAULT_ITEM = new DurableLanternItem(settings);
+        }
+
+        return LANTERN_DEFAULT_ITEM;
+    }
+
+    @Override
+    public Item getUpgradedLanternItem(Item.Settings settings) {
+        if(LANTERN_UPGRADED_ITEM == null) {
+            LANTERN_UPGRADED_ITEM = new NetheriteLanternItem(settings);
+        }
+
+        return LANTERN_UPGRADED_ITEM;
     }
 
     @Override
@@ -88,6 +121,39 @@ public class FabricPlatform extends AbstractModPlatform {
         for (Pair<SlotReference, ItemStack> pair : trinketComponent.getEquipped(elytra)) {
             if (pair.getLeft().inventory().getSlotType().getName().equals("cape")) {
                 if (ItemUtility.isOf(pair.getRight(), Enums.ItemType.NetheriteElytra)) {
+                    return pair.getRight();
+                }
+            }
+        }
+
+        return ItemStack.EMPTY;
+    }
+
+    @Override
+    protected ItemStack findLantern(PlayerEntity playerEntity) {
+        Optional<TrinketComponent> optional = TrinketsApi.getTrinketComponent(playerEntity);
+        if (optional.isEmpty()) {
+            return ItemStack.EMPTY;
+        }
+
+        ItemStack durableLantern = findLantern(optional.get(), Enums.ItemType.DurableLantern);
+        if (!durableLantern.isEmpty()) {
+            return durableLantern;
+        }
+
+        ItemStack netheriteLantern = findLantern(optional.get(), Enums.ItemType.NetheriteLantern);
+        if (!netheriteLantern.isEmpty()) {
+            return netheriteLantern;
+        }
+
+        return ItemStack.EMPTY;
+    }
+
+    private ItemStack findLantern(TrinketComponent trinketComponent, Enums.ItemType type) {
+        Item lantern = ItemUtility.get(type);
+        for (Pair<SlotReference, ItemStack> pair : trinketComponent.getEquipped(lantern)) {
+            if (pair.getLeft().inventory().getSlotType().getName().equals("charm")) {
+                if (ItemUtility.isOf(pair.getRight(), type)) {
                     return pair.getRight();
                 }
             }

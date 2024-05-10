@@ -1,12 +1,14 @@
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
+
 loom {
     forge {
         mixinConfig "durabletools-common.mixins.json"
         mixinConfig "durabletools.mixins.json"
     }
 }
+
 architectury {
     platformSetupLoomIde()
     forge()

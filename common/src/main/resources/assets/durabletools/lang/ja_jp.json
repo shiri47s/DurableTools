@@ -8,6 +8,7 @@
   "item.durabletools.netherite_firework_rocket.tooltip_1": "ネザライトインゴットで修復可能",
   "item.durabletools.netherite_firework_rocket.tooltip_2": "快適に空を飛ぶことができます",
   "item.durabletools.firework_rocket.alert": "情報: ロケット花火の耐久値がなくなりそうです",
+
   "item.durabletools.durable_totem": "不死のトーテム（耐）",
   "item.durabletools.durable_totem.tooltip_0": "耐久値を持つ不死のトーテム",
   "item.durabletools.durable_totem.tooltip_1": "不死のトーテムで修復可能",
@@ -16,10 +17,13 @@
   "item.durabletools.netherite_totem.tooltip_0": "耐久値を持つネザライトで強化された不死のトーテム",
   "item.durabletools.netherite_totem.tooltip_1": "ネザライトインゴットで修復可能",
   "item.durabletools.netherite_totem.tooltip_2": "ワールドで死ぬことは難しいでしょう",
+
   "trinkets.slot.charm.charm": "チャーム",
+
   "item.durabletools.netherite_elytra": "ネザーライトエリトラ",
   "item.durabletools.netherite_elytra.tooltip_0": "高速飛行をお楽しみください",
   "generic.firework_rocket_speed": "ロケット加速",
+
   "item.durabletools.durable_torch": "トーチ（耐）",
   "block.durabletools.durable_torch" : "トーチ",
   "block.durabletools.durable_wall_torch" : "トーチ",
@@ -29,5 +33,14 @@
   "item.durabletools.netherite_torch": "ネザライトーチ",
   "item.durabletools.netherite_torch.tooltip_0": "耐久値を持つネザライトで強化されたトーテム",
   "item.durabletools.netherite_torch.tooltip_1": "ネザライトインゴットで修復可能",
-  "item.durabletools.netherite_torch.tooltip_2": "暗闇から解放されます"
+  "item.durabletools.netherite_torch.tooltip_2": "暗闇から解放されます",
+
+  "item.durabletools.durable_lantern": "ランタン（耐）",
+  "item.durabletools.durable_lantern.tooltip_0": "このランタンは配置することは出来ませんが、チャームとして装備出来ます",
+  "item.durabletools.durable_lantern.tooltip_1": "チャームに装備中は周囲を照らすことが出来ます",
+  "item.durabletools.durable_lantern.tooltip_2": "また、チャームに装備中は徐々に耐久値が減少します",
+  "item.durabletools.netherite_lantern": "ネザライトランタン",
+  "item.durabletools.netherite_lantern.tooltip_0": "このランタンは配置することは出来ませんが、チャームとして装備出来ます",
+  "item.durabletools.netherite_lantern.tooltip_1": "チャームに装備中は周囲を照らすことが出来ます",
+  "item.durabletools.netherite_lantern.tooltip_2": "また、チャームに装備中は徐々に耐久値が減少します"
 }
