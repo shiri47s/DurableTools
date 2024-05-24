@@ -28,7 +28,7 @@ public class PlayerEntityMixin {
             return;
         }
 
-        if (playerEntity.getWorld().getTime() % 5 != 0) {
+        if (playerEntity.getWorld().getTime() % 10 != 0) {
             return;
         }
 
