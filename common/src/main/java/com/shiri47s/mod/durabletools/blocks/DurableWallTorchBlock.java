@@ -9,7 +9,6 @@ import net.minecraft.sound.BlockSoundGroup;
 public class DurableWallTorchBlock extends WallTorchBlock {
     public DurableWallTorchBlock() {
         super(
-                ParticleTypes.FLAME,
                 AbstractBlock
                 .Settings
                 .create()
@@ -17,6 +16,7 @@ public class DurableWallTorchBlock extends WallTorchBlock {
                 .breakInstantly()
                 .luminance(arg -> 14)
                 .sounds(BlockSoundGroup.WOOD)
-                .pistonBehavior(PistonBehavior.DESTROY));
+                .pistonBehavior(PistonBehavior.DESTROY),
+                ParticleTypes.FLAME);
     }
 }
