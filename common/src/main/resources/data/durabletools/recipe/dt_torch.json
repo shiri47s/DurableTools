@@ -1,0 +1,25 @@
+{
+  "type": "crafting_shaped",
+  "pattern": [
+    "TTT",
+    "RNR",
+    " S "
+  ],
+  "key": {
+    "T": {
+      "item": "minecraft:torch"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone_torch"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "durabletools:dt_torch"
+  }
+}

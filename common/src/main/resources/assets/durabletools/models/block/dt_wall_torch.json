@@ -1,0 +1,7 @@
+{
+  "render_type": "minecraft:cutout",
+  "parent": "durabletools:block/template_dt_wall_torch",
+  "textures": {
+    "torch": "durabletools:block/dt_torch"
+  }
+}

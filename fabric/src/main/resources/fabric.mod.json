@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "durabletools",
+  "version": "${version}",
+  "name": "DurableTools",
+  "description": "Enrich survival by adding durability value to items tools that do not have durability value.",
+  "authors": [
+    "shiri47s"
+  ],
+  "contact": {
+    "homepage": "https://syshima.net"
+  },
+  "license": "MIT",
+  "icon": "assets/durabletools/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.shiri47s.mod.fabric.DurabletoolsFabric"
+    ],
+    "client": [
+      "com.shiri47s.mod.fabric.client.DurabletoolsFabricClient"
+    ]
+  },
+  "mixins": [
+    "durabletools.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.5",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.6",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

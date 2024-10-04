@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "durabletools:block/dt_torch"
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "com.shiri47s.mod.durabletools.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "minVersion": "0.8",
+  "client": [
+  ],
+  "mixins": [
+    "ClientPlayNetworkHandlerMixin",
+    "LivingEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

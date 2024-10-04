@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "durabletools:item/dt_netherite_firework_rocket"
+  }
+}

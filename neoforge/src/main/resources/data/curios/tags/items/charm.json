@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "durabletools:dt_totem",
+      "required": false
+    },
+    {
+      "id": "durabletools:dt_netherite_totem",
+      "required": false
+    }
+  ]
+}

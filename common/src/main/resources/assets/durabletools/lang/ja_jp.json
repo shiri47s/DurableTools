@@ -1,0 +1,40 @@
+{
+  "item.durabletools": "Durable Tools",
+  "item.durabletools.group": "Durable Tools",
+
+  "item.durabletools.dt_firework_rocket": "ロケット花火（耐）",
+  "item.durabletools.dt_firework_rocket.tooltip_0": "耐久値を持つロケット花火",
+  "item.durabletools.dt_firework_rocket.tooltip_1": "プレイズパウダーで修復可能",
+  "item.durabletools.dt_firework_rocket.tooltip_2": "自由に空を飛ぶことができます",
+  "item.durabletools.dt_netherite_firework_rocket": "ネザライトロケット花火",
+  "item.durabletools.dt_netherite_firework_rocket.tooltip_0": "耐久値を持つネザライトで強化されたロケット花火",
+  "item.durabletools.dt_netherite_firework_rocket.tooltip_1": "ネザライトインゴットで修復可能",
+  "item.durabletools.dt_netherite_firework_rocket.tooltip_2": "快適に空を飛ぶことができます",
+  "item.durabletools.firework_rocket.alert": "情報: ロケット花火の耐久値がなくなりそうです",
+
+  "item.durabletools.dt_totem": "不死のトーテム（耐）",
+  "item.durabletools.dt_totem.tooltip_0": "耐久値を持つ不死のトーテム",
+  "item.durabletools.dt_totem.tooltip_1": "不死のトーテムで修復可能",
+  "item.durabletools.dt_totem.tooltip_2": "ワールドで死ににくくなります",
+  "item.durabletools.dt_netherite_totem": "不死のネザライトーテム",
+  "item.durabletools.dt_netherite_totem.tooltip_0": "耐久値を持つネザライトで強化された不死のトーテム",
+  "item.durabletools.dt_netherite_totem.tooltip_1": "ネザライトインゴットで修復可能",
+  "item.durabletools.dt_netherite_totem.tooltip_2": "ワールドで死ぬことは難しいでしょう",
+
+  "trinkets.slot.charm.charm": "チャーム",
+
+  "item.durabletools.dt_netherite_elytra": "ネザーライトエリトラ",
+  "item.durabletools.dt_netherite_elytra.tooltip_0": "高速飛行をお楽しみください",
+  "generic.firework_rocket_speed": "ロケット加速",
+
+  "item.durabletools.dt_torch": "トーチ（耐）",
+  "block.durabletools.dt_torch" : "トーチ",
+  "block.durabletools.dt_wall_torch" : "トーチ",
+  "item.durabletools.dt_torch.tooltip_0": "耐久値を持つトーチ",
+  "item.durabletools.dt_torch.tooltip_1": "トーチで修復可能",
+  "item.durabletools.dt_torch.tooltip_2": "暗闇から解放されます",
+  "item.durabletools.dt_netherite_torch": "ネザライトーチ",
+  "item.durabletools.dt_netherite_torch.tooltip_0": "耐久値を持つネザライトで強化されたトーテム",
+  "item.durabletools.dt_netherite_torch.tooltip_1": "ネザライトインゴットで修復可能",
+  "item.durabletools.dt_netherite_torch.tooltip_2": "暗闇から解放されます"
+}
