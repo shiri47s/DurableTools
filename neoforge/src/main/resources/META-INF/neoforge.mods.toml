@@ -11,7 +11,7 @@ authors = "shiri47s"
 description = '''
 Enrich survival by adding durability value to items tools that do not have durability value.
 '''
-#logoFile = ""
+logoFile = "icon.png"
 
 [[dependencies.durabletools]]
 modId = "neoforge"
