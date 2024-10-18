@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "durabletools:dt_firework_rocket",
+    "durabletools:dt_netherite_firework_rocket",
+    "durabletools:dt_netherite_torch",
+    "durabletools:dt_netherite_totem",
+    "durabletools:dt_torch",
+    "durabletools:dt_totem"
+  ]
+}

@@ -61,9 +61,10 @@ subprojects {
     if (!enabled_platforms.split(',').contains(project.name))
         return
 
-    def RELEASE = "beta"
+    def RELEASE = project.release_type
 
     def CHANGE_LOG = rootProject.file('changelog.md').getText("UTF-8")
+    //noinspection GroovyAssignabilityCheck
     def PUBLISH_NAME = "${project.archives_name}-v${project.mod_version}_${project.minecraft_version}-${project.name}"
     def MOD_LOADER = project.name
 
@@ -83,6 +84,7 @@ subprojects {
             dependencies {
                 required.project "fabric-api"
                 required.project "architectury-api"
+                required.project "trinkets-api"
             }
         }
     }
@@ -98,7 +100,21 @@ subprojects {
                 releaseType = RELEASE
                 changelogType = "markdown"
                 changelog = CHANGE_LOG
-                addGameVersion project.support_versions
+                addGameVersion "${project.support_versions}"
+
+                if (MOD_LOADER.equalsIgnoreCase('fabric')) {
+                    relations {
+                        requiredDependency 'fabric-api'
+                        requiredDependency 'architectury-api'
+                        requiredDependency "trinkets-api"
+                    }
+                }
+                else {
+                    relations {
+                        requiredDependency 'architectury-api'
+                        requiredDependency "trinkets-api"
+                    }
+                }
 
                 mainArtifact(remapJar.archiveFile.get().asFile) {
                     displayName = PUBLISH_NAME
