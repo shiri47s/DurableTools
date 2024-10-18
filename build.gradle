@@ -81,10 +81,18 @@ subprojects {
             changelog = CHANGE_LOG
             gameVersions = ["${project.minecraft_version}"]
             loaders = [MOD_LOADER]
-            dependencies {
-                required.project "fabric-api"
-                required.project "architectury-api"
-                required.project "trinkets-api"
+
+            if (MOD_LOADER.equalsIgnoreCase('fabric')) {
+                dependencies {
+                    required.project "fabric-api"
+                    required.project "architectury-api"
+                    required.project "5aaWibi9" // trinkets
+                }
+            }
+            else {
+                dependencies {
+                    required.project "architectury-api"
+                }
             }
         }
     }
@@ -106,13 +114,12 @@ subprojects {
                     relations {
                         requiredDependency 'fabric-api'
                         requiredDependency 'architectury-api'
-                        requiredDependency "trinkets-api"
+                        requiredDependency "trinkets"
                     }
                 }
                 else {
                     relations {
                         requiredDependency 'architectury-api'
-                        requiredDependency "trinkets-api"
                     }
                 }
 
