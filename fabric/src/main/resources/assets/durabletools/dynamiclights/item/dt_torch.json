@@ -1,5 +1,7 @@
 {
-  "item": "durabletools:dt_torch",
+  "match": {
+    "items": "durabletools:dt_torch"
+  },
   "luminance": 12,
   "water_sensitive": true
 }

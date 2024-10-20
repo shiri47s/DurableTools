@@ -1,5 +1,7 @@
 {
-  "item": "durabletools:dt_netherite_torch",
+  "match": {
+    "items": "durabletools:dt_netherite_torch"
+  },
   "luminance": 15,
   "water_sensitive": false
 }
